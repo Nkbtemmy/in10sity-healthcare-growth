@@ -51,10 +51,10 @@ const Portfolio = () => {
   return (
     <section id="portfolio" className="py-24 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="text-foreground">Our</span>{" "}
-            <span className="bg-gradient-primary bg-clip-text text-transparent">Portfolio</span>
+            <span className="bg-gradient-primary bg-clip-text text-transparent text-reveal">Portfolio</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             We invest across the healthcare value chain, from early-stage startups 
@@ -65,12 +65,12 @@ const Portfolio = () => {
         {/* Focus Areas */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
           {focusAreas.map((area, index) => (
-            <Card key={index} className="text-center p-6 hover:shadow-medium transition-all duration-300 group">
+            <Card key={index} className={`text-center p-6 hover-lift hover-glow transition-all duration-500 group fade-in-up stagger-${(index % 3) + 1}`}>
               <CardContent className="pt-6">
-                <div className="w-16 h-16 bg-health-green/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-health-green/20 transition-colors">
+                <div className="w-16 h-16 bg-health-green/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-health-green/20 group-hover:scale-110 transition-all duration-300">
                   <area.icon className="h-8 w-8 text-health-green" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">{area.title}</h3>
+                <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">{area.title}</h3>
                 <p className="text-muted-foreground mb-4 leading-relaxed">{area.description}</p>
                 <Badge variant="secondary" className="text-xs">
                   {area.companies}
@@ -82,10 +82,10 @@ const Portfolio = () => {
 
         {/* Portfolio Highlights */}
         <div className="max-w-5xl mx-auto">
-          <h3 className="text-3xl font-bold text-center mb-12">Portfolio Highlights</h3>
+          <h3 className="text-3xl font-bold text-center mb-12 fade-in-up">Portfolio Highlights</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {portfolioHighlights.map((company, index) => (
-              <Card key={index} className="hover:shadow-medium transition-all duration-300 group cursor-pointer">
+              <Card key={index} className={`hover-lift hover-glow transition-all duration-500 group cursor-pointer fade-in-up stagger-${(index % 3) + 1}`}>
                 <CardContent className="p-6">
                   <div className="flex items-start justify-between mb-4">
                     <div>
@@ -96,7 +96,7 @@ const Portfolio = () => {
                         {company.sector}
                       </Badge>
                     </div>
-                    <ExternalLink className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                    <ExternalLink className="h-5 w-5 text-muted-foreground group-hover:text-primary group-hover:scale-110 transition-all duration-300" />
                   </div>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
                     {company.description}

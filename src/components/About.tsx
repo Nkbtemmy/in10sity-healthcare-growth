@@ -28,10 +28,10 @@ const About = () => {
   return (
     <section id="about" className="py-24 bg-gradient-subtle">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="text-foreground">About</span>{" "}
-            <span className="bg-gradient-primary bg-clip-text text-transparent">in10nsity</span>
+            <span className="bg-gradient-primary bg-clip-text text-transparent text-reveal">in10nsity</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Founded on the belief that healthcare innovation can transform lives, 
@@ -42,20 +42,20 @@ const About = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {values.map((value, index) => (
-            <Card key={index} className="text-center p-6 hover:shadow-medium transition-all duration-300 border-border/50">
+            <Card key={index} className={`text-center p-6 hover-lift hover-glow transition-all duration-500 border-border/50 fade-in-up stagger-${(index % 4) + 1}`}>
               <CardContent className="pt-6">
-                <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-4 hover:scale-110 transition-transform duration-300">
                   <value.icon className="h-8 w-8 text-primary-foreground" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-foreground">{value.title}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-foreground hover:text-primary transition-colors">{value.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{value.description}</p>
               </CardContent>
             </Card>
           ))}
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-card rounded-3xl p-8 md:p-12 shadow-soft border border-border/50">
+        <div className="max-w-4xl mx-auto fade-in-up stagger-3">
+          <div className="bg-card rounded-3xl p-8 md:p-12 shadow-soft border border-border/50 hover-lift">
             <h3 className="text-3xl font-bold mb-6 text-center">Our Mission</h3>
             <p className="text-lg text-muted-foreground text-center leading-relaxed mb-8">
               To accelerate healthcare innovation in emerging markets by providing strategic capital, 
@@ -63,15 +63,15 @@ const About = () => {
               world's most pressing healthcare challenges.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-              <div>
+              <div className="hover-lift">
                 <div className="text-3xl font-bold text-health-green mb-2">$100M+</div>
                 <p className="text-muted-foreground">Assets Under Management</p>
               </div>
-              <div>
+              <div className="hover-lift">
                 <div className="text-3xl font-bold text-health-green mb-2">25+</div>
                 <p className="text-muted-foreground">Portfolio Companies</p>
               </div>
-              <div>
+              <div className="hover-lift">
                 <div className="text-3xl font-bold text-health-green mb-2">10+</div>
                 <p className="text-muted-foreground">Years Experience</p>
               </div>

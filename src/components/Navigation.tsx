@@ -18,7 +18,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+            <h1 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent hover:scale-105 transition-transform duration-300">
               in10nsity
             </h1>
           </div>
@@ -30,7 +30,7 @@ const Navigation = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
+                  className="nav-link text-foreground hover:text-primary transition-colors duration-200 font-medium"
                 >
                   {item.name}
                 </a>
@@ -40,7 +40,7 @@ const Navigation = () => {
 
           {/* Contact Button */}
           <div className="hidden md:block">
-            <Button variant="primary" size="sm">
+            <Button variant="primary" size="sm" className="btn-magnetic">
               Get in Touch
             </Button>
           </div>

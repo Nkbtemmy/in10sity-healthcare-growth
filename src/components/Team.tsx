@@ -35,10 +35,10 @@ const Team = () => {
   return (
     <section id="team" className="py-24 bg-gradient-subtle">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="text-foreground">Our</span>{" "}
-            <span className="bg-gradient-primary bg-clip-text text-transparent">Team</span>
+            <span className="bg-gradient-primary bg-clip-text text-transparent text-reveal">Team</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             A diverse team of healthcare experts, entrepreneurs, and investors 
@@ -48,15 +48,15 @@ const Team = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {teamMembers.map((member, index) => (
-            <Card key={index} className="text-center hover:shadow-medium transition-all duration-300 group">
+            <Card key={index} className={`text-center hover-lift hover-glow transition-all duration-500 group fade-in-up stagger-${(index % 3) + 1}`}>
               <CardContent className="p-6">
                 <div className="mb-6">
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-health-green/20 group-hover:border-health-green/40 transition-colors"
+                    className="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-health-green/20 group-hover:border-health-green/40 group-hover:scale-110 transition-all duration-300"
                   />
-                  <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
+                  <h3 className="text-xl font-semibold mb-1 group-hover:text-primary transition-colors">{member.name}</h3>
                   <p className="text-health-green font-medium mb-3">{member.role}</p>
                   <p className="text-muted-foreground leading-relaxed text-sm">
                     {member.bio}
@@ -66,21 +66,21 @@ const Team = () => {
                 <div className="flex justify-center space-x-4">
                   <a
                     href={member.linkedin}
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110"
                     aria-label={`${member.name} LinkedIn`}
                   >
                     <Linkedin className="h-5 w-5" />
                   </a>
                   <a
                     href={member.twitter}
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110"
                     aria-label={`${member.name} Twitter`}
                   >
                     <Twitter className="h-5 w-5" />
                   </a>
                   <a
                     href={`mailto:${member.email}`}
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110"
                     aria-label={`Email ${member.name}`}
                   >
                     <Mail className="h-5 w-5" />
