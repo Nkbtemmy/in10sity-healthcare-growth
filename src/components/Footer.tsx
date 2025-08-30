@@ -24,7 +24,7 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: Linkedin, href: "https://www.linkedin.com/company/int10nsity/?viewAsMember=true", label: "LinkedIn" },
     { icon: Twitter, href: "#", label: "Twitter" },
     { icon: Mail, href: "mailto:hello@in10nsity.com", label: "Email" }
   ];

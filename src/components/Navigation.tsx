@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import company_logo from "@/assets/company_logo.jpeg";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,16 +18,18 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Button variant="ghost" size="icon" className="p-0">
-            <img
-              src="in10sity-high-resolution-logo.png"
-              alt="in10nsity Logo"
-              className="h-8"
-            />
-            <h1 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent hover:scale-105 transition-transform duration-300">
-              in10nsity
-            </h1>
-          </Button>
+            <a href="/" className="flex items-center space-x-2">
+              <Button variant="ghost" size="icon" className="p-0">
+                <img
+                  src= {company_logo}
+                  alt="in10nsity Logo"
+                  className="h-8"
+                />
+                <h1 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent hover:scale-105 transition-transform duration-300">
+                  in10nsity
+                </h1>
+              </Button>
+            </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
