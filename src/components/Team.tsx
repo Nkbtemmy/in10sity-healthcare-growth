@@ -1,128 +1,98 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Linkedin, Twitter, Mail } from "lucide-react";
+import wistonImage from "@/assets/wiston.png";
+import nkubito from "@/assets/nkubito.png";
+import lydivine from "@/assets/lydivine.png";
 
 const Team = () => {
   const teamMembers = [
     {
-      name: "Mr MUNANA Wiston May",
+      name: "Mr. MUNANA Wiston May",
       role: "Founding Partner",
       bio: "Serial entrepreneur and investor. Built and sold two healthcare startups in Rwanda and Kenya.",
-      image: "https://media.licdn.com/dms/image/v2/D4D03AQFmY8JBQyTvvg/profile-displayphoto-crop_800_800/B4DZhW0nxbGsAI-/0/1753803292335?e=1759363200&v=beta&t=qpw50yQv6gTSEdtEnKCDwP-J6RnCFdE0dmUqosbovkk",
+      image: wistonImage,
       linkedin: "#",
       twitter: "#",
-      email: "james@in10nsity.com",
+      email: "wiston.munana@in10nsity.com",
     },
     {
       name: "Dr. Emmanuel NKUBITO",
       role: "Managing Partner",
       bio: "Former healthcare executive with 15+ years in emerging markets. Led digital health initiatives across East Africa.",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b412?w=400&h=400&fit=crop&crop=face",
+      image: nkubito,
       linkedin: "#",
       twitter: "#",
-      email: "sarah@in10nsity.com",
+      email: "emmanuel.nkubito@in10nsity.com",
     },
     {
-      name: "Dr. Aisha Nkurunziza",
+      name: "Dr. Marie Lydivine Uwase",
       role: "Investment Partner",
       bio: "Medical doctor turned venture capitalist. Specializes in health tech and pharmaceutical investments.",
-      image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&fit=crop&crop=face",
+      image: lydivine,
       linkedin: "#",
       twitter: "#",
-      email: "aisha@in10nsity.com",
+      email: "marie.uwase@in10nsity.com",
     },
   ];
 
+  // Inspired by the YouTube video, we'll use animated SVG blobs and gradients for a modern background
   return (
-    <section id="team" className="relative py-24 bg-gradient-subtle overflow-hidden">
-      {/* Graph Background */}
-      <div className="absolute inset-0 opacity-20 pointer-events-none">
+    <section id="team" className="relative py-24 bg-gradient-to-br from-[#e0f7fa] via-[#f3e8ff] to-[#e0f2fe] overflow-hidden">
+      {/* Animated Blobs Background */}
+      <div className="absolute inset-0 pointer-events-none z-0">
         <svg
-          className="w-full h-full animate-pulse-slow"
+          className="absolute top-[-10%] left-[-10%] w-[40vw] h-[40vw] animate-blob-slow"
+          viewBox="0 0 600 600"
           xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="xMidYMid slice"
         >
           <defs>
-            <linearGradient id="graphGradient" x1="0" y1="0" x2="1" y2="1">
+            <linearGradient id="blobGradient1" x1="0" y1="0" x2="1" y2="1">
               <stop offset="0%" stopColor="#3b82f6" />
               <stop offset="100%" stopColor="#10b981" />
             </linearGradient>
           </defs>
-
-          {/* Moving Lines */}
-          <g stroke="url(#graphGradient)" strokeWidth="1.5" strokeLinecap="round">
-            <line x1="10%" y1="20%" x2="30%" y2="40%">
-              <animate
-                attributeName="x2"
-                values="30%;35%;30%"
-                dur="6s"
-                repeatCount="indefinite"
-              />
-              <animate
-                attributeName="y2"
-                values="40%;35%;40%"
-                dur="5s"
-                repeatCount="indefinite"
-              />
-            </line>
-            <line x1="60%" y1="30%" x2="80%" y2="50%">
-              <animate
-                attributeName="x2"
-                values="80%;75%;80%"
-                dur="7s"
-                repeatCount="indefinite"
-              />
-              <animate
-                attributeName="y2"
-                values="50%;55%;50%"
-                dur="6s"
-                repeatCount="indefinite"
-              />
-            </line>
-            <line x1="40%" y1="70%" x2="70%" y2="85%">
-              <animate
-                attributeName="x2"
-                values="70%;75%;70%"
-                dur="8s"
-                repeatCount="indefinite"
-              />
-            </line>
-          </g>
-
-          {/* Nodes */}
-          <g fill="url(#graphGradient)">
-            <circle cx="10%" cy="20%" r="4">
-              <animate
-                attributeName="r"
-                values="4;6;4"
-                dur="4s"
-                repeatCount="indefinite"
-              />
-            </circle>
-            <circle cx="30%" cy="40%" r="3">
-              <animate
-                attributeName="r"
-                values="3;5;3"
-                dur="5s"
-                repeatCount="indefinite"
-              />
-            </circle>
-            <circle cx="60%" cy="30%" r="4">
-              <animate
-                attributeName="r"
-                values="4;7;4"
-                dur="6s"
-                repeatCount="indefinite"
-              />
-            </circle>
-            <circle cx="80%" cy="50%" r="5">
-              <animate
-                attributeName="r"
-                values="5;8;5"
-                dur="7s"
-                repeatCount="indefinite"
-              />
-            </circle>
-          </g>
+          <path
+            fill="url(#blobGradient1)"
+            d="M421.5,324.5Q410,399,324.5,410Q239,421,181,370Q123,319,156.5,239.5Q190,160,270,156Q350,152,401,201Q452,250,421.5,324.5Z"
+          >
+            <animate
+              attributeName="d"
+              dur="10s"
+              repeatCount="indefinite"
+              values="
+                M421.5,324.5Q410,399,324.5,410Q239,421,181,370Q123,319,156.5,239.5Q190,160,270,156Q350,152,401,201Q452,250,421.5,324.5Z;
+                M400,320Q390,400,320,420Q250,440,180,370Q110,300,150,220Q190,140,270,160Q350,180,400,220Q450,260,400,320Z;
+                M421.5,324.5Q410,399,324.5,410Q239,421,181,370Q123,319,156.5,239.5Q190,160,270,156Q350,152,401,201Q452,250,421.5,324.5Z
+              "
+            />
+          </path>
+        </svg>
+        <svg
+          className="absolute bottom-[-10%] right-[-10%] w-[30vw] h-[30vw] animate-blob-fast"
+          viewBox="0 0 600 600"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient id="blobGradient2" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stopColor="#a78bfa" />
+              <stop offset="100%" stopColor="#f472b6" />
+            </linearGradient>
+          </defs>
+          <path
+            fill="url(#blobGradient2)"
+            d="M421.5,324.5Q410,399,324.5,410Q239,421,181,370Q123,319,156.5,239.5Q190,160,270,156Q350,152,401,201Q452,250,421.5,324.5Z"
+          >
+            <animate
+              attributeName="d"
+              dur="8s"
+              repeatCount="indefinite"
+              values="
+                M421.5,324.5Q410,399,324.5,410Q239,421,181,370Q123,319,156.5,239.5Q190,160,270,156Q350,152,401,201Q452,250,421.5,324.5Z;
+                M400,320Q390,400,320,420Q250,440,180,370Q110,300,150,220Q190,140,270,160Q350,180,400,220Q450,260,400,320Z;
+                M421.5,324.5Q410,399,324.5,410Q239,421,181,370Q123,319,156.5,239.5Q190,160,270,156Q350,152,401,201Q452,250,421.5,324.5Z
+              "
+            />
+          </path>
         </svg>
       </div>
 
@@ -212,6 +182,20 @@ const Team = () => {
           </div>
         </div>
       </div>
+
+      {/* Optional: Add these keyframes to your CSS for blob animation */}
+      {/* 
+      @keyframes blob-slow {
+        0%, 100% { transform: scale(1) translate(0,0); }
+        50% { transform: scale(1.1) translate(20px, 30px); }
+      }
+      @keyframes blob-fast {
+        0%, 100% { transform: scale(1) translate(0,0); }
+        50% { transform: scale(1.05) translate(-10px, -20px); }
+      }
+      .animate-blob-slow { animation: blob-slow 18s ease-in-out infinite; }
+      .animate-blob-fast { animation: blob-fast 12s ease-in-out infinite; }
+      */}
     </section>
   );
 };

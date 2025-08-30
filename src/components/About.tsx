@@ -30,48 +30,60 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="relative py-24 bg-gradient-subtle overflow-hidden">
-      {/* DNA Background */}
-      <div className="absolute inset-0 pointer-events-none opacity-20">
+    <section id="about" className="relative py-24 bg-gradient-to-br from-white via-[#f3e8ff] to-[#e0f2fe] overflow-hidden">
+      {/* Animated Blobs Background */}
+      <div className="absolute inset-0 pointer-events-none z-0">
         <svg
-          className="w-full h-full animate-pulse-slow"
+          className="absolute top-[-10%] left-[-10%] w-[40vw] h-[40vw] animate-blob-slow"
+          viewBox="0 0 600 600"
           xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="xMidYMid slice"
         >
           <defs>
-            <linearGradient id="dnaGradient" x1="0" y1="0" x2="1" y2="1">
+            <linearGradient id="blobGradient1" x1="0" y1="0" x2="1" y2="1">
               <stop offset="0%" stopColor="#3b82f6" />
               <stop offset="100%" stopColor="#10b981" />
             </linearGradient>
           </defs>
           <path
-            d="M0,300 C150,100 350,500 500,300 S850,500 1000,300"
-            stroke="url(#dnaGradient)"
-            strokeWidth="3"
-            fill="none"
-            strokeDasharray="8 12"
+            fill="url(#blobGradient1)"
+            d="M421.5,324.5Q410,399,324.5,410Q239,421,181,370Q123,319,156.5,239.5Q190,160,270,156Q350,152,401,201Q452,250,421.5,324.5Z"
           >
             <animate
-              attributeName="stroke-dashoffset"
-              from="0"
-              to="1000"
+              attributeName="d"
               dur="10s"
               repeatCount="indefinite"
+              values="
+                M421.5,324.5Q410,399,324.5,410Q239,421,181,370Q123,319,156.5,239.5Q190,160,270,156Q350,152,401,201Q452,250,421.5,324.5Z;
+                M400,320Q390,400,320,420Q250,440,180,370Q110,300,150,220Q190,140,270,160Q350,180,400,220Q450,260,400,320Z;
+                M421.5,324.5Q410,399,324.5,410Q239,421,181,370Q123,319,156.5,239.5Q190,160,270,156Q350,152,401,201Q452,250,421.5,324.5Z
+              "
             />
           </path>
+        </svg>
+        <svg
+          className="absolute bottom-[-10%] right-[-10%] w-[30vw] h-[30vw] animate-blob-fast"
+          viewBox="0 0 600 600"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient id="blobGradient2" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stopColor="#a78bfa" />
+              <stop offset="100%" stopColor="#f472b6" />
+            </linearGradient>
+          </defs>
           <path
-            d="M0,500 C150,700 350,300 500,500 S850,300 1000,500"
-            stroke="url(#dnaGradient)"
-            strokeWidth="3"
-            fill="none"
-            strokeDasharray="8 12"
+            fill="url(#blobGradient2)"
+            d="M421.5,324.5Q410,399,324.5,410Q239,421,181,370Q123,319,156.5,239.5Q190,160,270,156Q350,152,401,201Q452,250,421.5,324.5Z"
           >
             <animate
-              attributeName="stroke-dashoffset"
-              from="0"
-              to="-1000"
-              dur="12s"
+              attributeName="d"
+              dur="8s"
               repeatCount="indefinite"
+              values="
+                M421.5,324.5Q410,399,324.5,410Q239,421,181,370Q123,319,156.5,239.5Q190,160,270,156Q350,152,401,201Q452,250,421.5,324.5Z;
+                M400,320Q390,400,320,420Q250,440,180,370Q110,300,150,220Q190,140,270,160Q350,180,400,220Q450,260,400,320Z;
+                M421.5,324.5Q410,399,324.5,410Q239,421,181,370Q123,319,156.5,239.5Q190,160,270,156Q350,152,401,201Q452,250,421.5,324.5Z
+              "
             />
           </path>
         </svg>
