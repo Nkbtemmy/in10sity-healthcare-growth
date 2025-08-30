@@ -17,11 +17,16 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <Button variant="ghost" size="icon" className="p-0">
+            <img
+              src="in10sity-high-resolution-logo.png"
+              alt="in10nsity Logo"
+              className="h-8"
+            />
             <h1 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent hover:scale-105 transition-transform duration-300">
               in10nsity
             </h1>
-          </div>
+          </Button>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">

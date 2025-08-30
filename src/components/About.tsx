@@ -6,49 +6,110 @@ const About = () => {
     {
       icon: Heart,
       title: "Healthcare First",
-      description: "We believe healthcare is a fundamental human right and invest in solutions that make quality care accessible to all."
+      description:
+        "We believe healthcare is a fundamental human right and invest in solutions that make quality care accessible to all.",
     },
     {
       icon: Target,
       title: "Impact Focus",
-      description: "Every investment decision is guided by the potential to create lasting positive impact in underserved communities."
+      description:
+        "Every investment decision is guided by the potential to create lasting positive impact in underserved communities.",
     },
     {
       icon: Globe,
       title: "Emerging Markets",
-      description: "We specialize in understanding and navigating the unique challenges and opportunities in emerging markets."
+      description:
+        "We specialize in understanding and navigating the unique challenges and opportunities in emerging markets.",
     },
     {
       icon: Users,
       title: "Partnership Approach",
-      description: "We work closely with founders, providing not just capital but strategic guidance and network access."
-    }
+      description:
+        "We work closely with founders, providing not just capital but strategic guidance and network access.",
+    },
   ];
 
   return (
-    <section id="about" className="py-24 bg-gradient-subtle">
-      <div className="container mx-auto px-4">
+    <section id="about" className="relative py-24 bg-gradient-subtle overflow-hidden">
+      {/* DNA Background */}
+      <div className="absolute inset-0 pointer-events-none opacity-20">
+        <svg
+          className="w-full h-full animate-pulse-slow"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="xMidYMid slice"
+        >
+          <defs>
+            <linearGradient id="dnaGradient" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stopColor="#3b82f6" />
+              <stop offset="100%" stopColor="#10b981" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M0,300 C150,100 350,500 500,300 S850,500 1000,300"
+            stroke="url(#dnaGradient)"
+            strokeWidth="3"
+            fill="none"
+            strokeDasharray="8 12"
+          >
+            <animate
+              attributeName="stroke-dashoffset"
+              from="0"
+              to="1000"
+              dur="10s"
+              repeatCount="indefinite"
+            />
+          </path>
+          <path
+            d="M0,500 C150,700 350,300 500,500 S850,300 1000,500"
+            stroke="url(#dnaGradient)"
+            strokeWidth="3"
+            fill="none"
+            strokeDasharray="8 12"
+          >
+            <animate
+              attributeName="stroke-dashoffset"
+              from="0"
+              to="-1000"
+              dur="12s"
+              repeatCount="indefinite"
+            />
+          </path>
+        </svg>
+      </div>
+
+      {/* Content */}
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="text-foreground">About</span>{" "}
-            <span className="bg-gradient-primary bg-clip-text text-transparent text-reveal">in10nsity</span>
+            <span className="bg-gradient-primary bg-clip-text text-transparent text-reveal">
+              in10nsity
+            </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Founded on the belief that healthcare innovation can transform lives, 
-            we're a venture capital firm dedicated to backing entrepreneurs who are 
-            building the future of healthcare in Rwanda and across emerging markets.
+            Founded on the belief that healthcare innovation can transform lives,
+            we're a venture capital firm dedicated to backing entrepreneurs who
+            are building the future of healthcare in Rwanda and across emerging
+            markets.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {values.map((value, index) => (
-            <Card key={index} className={`text-center p-6 hover-lift hover-glow transition-all duration-500 border-border/50 fade-in-up stagger-${(index % 4) + 1}`}>
+            <Card
+              key={index}
+              className={`text-center p-6 hover-lift hover-glow transition-all duration-500 border-border/50 fade-in-up stagger-${(index % 4) + 1}`}
+            >
               <CardContent className="pt-6">
                 <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-4 hover:scale-110 transition-transform duration-300">
                   <value.icon className="h-8 w-8 text-primary-foreground" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-foreground hover:text-primary transition-colors">{value.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{value.description}</p>
+                <h3 className="text-xl font-semibold mb-3 text-foreground hover:text-primary transition-colors">
+                  {value.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {value.description}
+                </p>
               </CardContent>
             </Card>
           ))}
@@ -58,21 +119,28 @@ const About = () => {
           <div className="bg-card rounded-3xl p-8 md:p-12 shadow-soft border border-border/50 hover-lift">
             <h3 className="text-3xl font-bold mb-6 text-center">Our Mission</h3>
             <p className="text-lg text-muted-foreground text-center leading-relaxed mb-8">
-              To accelerate healthcare innovation in emerging markets by providing strategic capital, 
-              deep sector expertise, and unwavering support to entrepreneurs who are solving the 
-              world's most pressing healthcare challenges.
+              To accelerate healthcare innovation in emerging markets by
+              providing strategic capital, deep sector expertise, and unwavering
+              support to entrepreneurs who are solving the world's most pressing
+              healthcare challenges.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
               <div className="hover-lift">
-                <div className="text-3xl font-bold text-health-green mb-2">$100M+</div>
+                <div className="text-3xl font-bold text-health-green mb-2">
+                  $100M+
+                </div>
                 <p className="text-muted-foreground">Assets Under Management</p>
               </div>
               <div className="hover-lift">
-                <div className="text-3xl font-bold text-health-green mb-2">25+</div>
+                <div className="text-3xl font-bold text-health-green mb-2">
+                  25+
+                </div>
                 <p className="text-muted-foreground">Portfolio Companies</p>
               </div>
               <div className="hover-lift">
-                <div className="text-3xl font-bold text-health-green mb-2">10+</div>
+                <div className="text-3xl font-bold text-health-green mb-2">
+                  10+
+                </div>
                 <p className="text-muted-foreground">Years Experience</p>
               </div>
             </div>
