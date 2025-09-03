@@ -3,29 +3,31 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Mail, Phone, Send } from "lucide-react";
+import emailjs from 'emailjs-com';
+import Swal from "sweetalert2";
 
 const Contact = () => {
   const contactInfo = [
     {
       icon: MapPin,
       title: "Office",
-      details: ["Kigali, Rwanda", "Kigali Heights, 4th Floor"]
+      details: ["Kigali, Rwanda", "Kigali Heights, 4th Floor"],
     },
     {
       icon: Mail,
       title: "Email",
-      details: ["hello@in10nsity.com", "partnerships@in10nsity.com"]
+      details: ["hello@in10nsity.com", "partnerships@in10nsity.com"],
     },
     {
       icon: Phone,
       title: "Phone",
-      details: ["+250 123 456 789", "+250 987 654 321"]
-    }
+      details: ["+250 123 456 789", "+250 987 654 321"],
+    },
   ];
 
   return (
     <section id="contact" className="py-24 bg-background">
-            <div className="absolute inset-0 pointer-events-none z-0">
+      <div className="absolute inset-0 pointer-events-none z-0">
         {/* Top Left Blob */}
         <svg
           className="absolute top-[-10%] left-[-10%] w-[40vw] h-[40vw] animate-blob-slow"
@@ -141,7 +143,40 @@ const Contact = () => {
           <Card className="shadow-medium border-border/50">
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold mb-6">Send us a Message</h3>
-              <form className="space-y-6">
+              <form
+                className="space-y-6"
+                onSubmit={async (e) => {
+                  e.preventDefault();
+                  const form = e.target as HTMLFormElement;
+                  const data = {
+                    firstName: (form.firstName as HTMLInputElement).value,
+                    lastName: (form.lastName as HTMLInputElement).value,
+                    email: (form.email as HTMLInputElement).value,
+                    company: (form.company as HTMLInputElement).value,
+                    message: (form.message as HTMLTextAreaElement).value,
+                  };
+                  try {
+                    await emailjs.send(
+                      'service_1g8wu3i',
+                      'template_8i3ipul',
+                      data,
+                      'c8bFV5c2oWjtCZTm1'
+                    );
+                    Swal.fire({
+                      title: "Good job!",
+                      text: "You clicked the button!",
+                      icon: "success"
+                    });
+                    form.reset();
+                  } catch (error) {
+                    Swal.fire({
+                      title: "Error!",
+                      text: "Failed to send message. Please try again.",
+                      icon: "error"
+                    });
+                  }
+                }}
+              >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="firstName" className="block text-sm font-medium mb-2">
@@ -149,8 +184,10 @@ const Contact = () => {
                     </label>
                     <Input
                       id="firstName"
+                      name="firstName"
                       placeholder="Enter your first name"
                       className="border-border/50"
+                      required
                     />
                   </div>
                   <div>
@@ -159,8 +196,10 @@ const Contact = () => {
                     </label>
                     <Input
                       id="lastName"
+                      name="lastName"
                       placeholder="Enter your last name"
                       className="border-border/50"
+                      required
                     />
                   </div>
                 </div>
@@ -171,9 +210,11 @@ const Contact = () => {
                   </label>
                   <Input
                     id="email"
+                    name="email"
                     type="email"
                     placeholder="Enter your email"
                     className="border-border/50"
+                    required
                   />
                 </div>
 
@@ -183,6 +224,7 @@ const Contact = () => {
                   </label>
                   <Input
                     id="company"
+                    name="company"
                     placeholder="Enter your company name"
                     className="border-border/50"
                   />
@@ -194,13 +236,15 @@ const Contact = () => {
                   </label>
                   <Textarea
                     id="message"
+                    name="message"
                     placeholder="Tell us about your project or inquiry..."
                     rows={4}
                     className="border-border/50"
+                    required
                   />
                 </div>
 
-                <Button variant="primary" className="w-full group">
+                <Button variant="primary" className="w-full group" type="submit">
                   Send Message
                   <Send className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
