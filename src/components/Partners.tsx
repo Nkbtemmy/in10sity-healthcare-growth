@@ -10,19 +10,19 @@ interface Partner {
 
 const partners: Partner[] = [
   {
-    name: "World Health Organization",
-    logo: "https://imgs.search.brave.com/I-A4qVMpCeTTbKtnQyyuBn2TYzOaCQgdnDOa_QSSa8U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzYzLzQw/LzJiLzYzNDAyYmMz/MWMwOTc2ZmQzYWIw/ZGNiM2NkMWQ0Y2U4/LmpwZw",
-    website: "https://www.who.int/",
-  },
-  {
-    name: "Bill & Melinda Gates Foundation",
-    logo: "https://imgs.search.brave.com/rTkdEkC7JnBkC3bzCaqQZdfGh44hJqEozyPBM9ok-mo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zb2Np/YWxpbXBhY3QuY29t/L3dwLWNvbnRlbnQv/dXBsb2Fkcy8yMDI0/LzA0L3BuZy10cmFu/c3BhcmVudC1iaWxs/LW1lbGluZGEtZ2F0/ZXMtZm91bmRhdGlv/bi1naXZpbmctdHVl/c2RheS1vcmdhbml6/YXRpb24tZG9uYXRp/b24tYmlsbC1nYXRl/LWNvbXBhbnktdGV4/dC1sb2dvLXRodW1i/bmFpbC0zMDB4MzAw/LnBuZw",
-    website: "https://www.gatesfoundation.org/",
+    "name": "Rwanda Social Security Board (RSSB)",
+    "logo": "https://rssb.rw/_next/image?url=%2Fassets%2Frssb-full-logo.png&w=256&q=75",
+    "website": "https://www.rssb.rw/"
   },
   {
     name: "Rwanda Ministry of Health",
     logo: "https://www.moh.gov.rw/index.php?eID=dumpFile&t=f&f=1679&token=c456432515e20118795fbbd0cce379ac2bcd0a14",
     website: "https://www.moh.gov.rw/",
+  },
+  {
+    name: "World Health Organization",
+    logo: "https://imgs.search.brave.com/I-A4qVMpCeTTbKtnQyyuBn2TYzOaCQgdnDOa_QSSa8U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzYzLzQw/LzJiLzYzNDAyYmMz/MWMwOTc2ZmQzYWIw/ZGNiM2NkMWQ0Y2U4/LmpwZw",
+    website: "https://www.who.int/",
   },
   {
     name: "African Development Bank",
